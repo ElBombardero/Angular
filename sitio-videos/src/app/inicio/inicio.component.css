@@ -1,0 +1,78 @@
+
+.caja {
+    box-sizing:border-box;
+    background: white;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.3);
+    margin-left: 10px;
+    padding: 20px;
+    padding-bottom: 25px;
+    border-radius:15px;
+}
+
+.datos {
+    height: 35px;
+    width:100% ;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: gray;
+    padding-top: 5px;
+    background-color: white;
+}
+
+.breadcrumb {
+    background-color: white;
+    border:1px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.slider-container {
+    display: inline;
+}
+.media {
+    box-shadow:0 2px 4px 0 rgba(163, 161, 161, 0.3);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.media:hover {
+    border-color: blue;
+    box-shadow:0 0 0 1px rgba(0, 0, 0, .15) inset, 0 1px 6px rgba(0, 0, 0, 0.92);
+}
+.contenido {
+    margin: auto;
+    max-width: 87%;
+}
+
+.Contenedor-Imagen {
+	margin-right:10px;
+    height: 200px;
+    width: 250px;
+	border-color: white;
+    border-style:solid;
+    border-width:3px;
+    border-radius: 5px;
+}
+
+.Contenedor-Imagen img{
+    width:100%;
+    height: 100%;
+}
+
+.post-title-inicio {   
+    font-size: 1.5em;
+    font-weight:800;
+    margin-top:0;
+}
+
+.post-contenido {
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width:900px){
+
+    .contenido {
+        max-width: 100%;
+    }
+}

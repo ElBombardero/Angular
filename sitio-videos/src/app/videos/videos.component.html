@@ -1,0 +1,29 @@
+
+<div *ngFor="let video of videos" class=" posteo">
+  <div class=" contenedor-imagen">
+    <a href="#">
+      <div class="imagen">
+        <img src="{{video.imagen_src}}" alt="{{video.titulo}}" width="158" height="158">
+      </div>
+    </a>
+  </div>
+  <div class="datos">
+    <div class="titulo-descripcion-autor">
+      <div class=" titulo">
+        <a href="#">{{video.titulo}}</a>
+        <i class="fa fa-window-close-o fa-lg icono-x"  (click)="borrarVideo(video.id)" title="eliminar" aria-hidden="true"></i>						
+      </div>
+      <div class="descripcion">
+        {{video.descripcion}}
+      </div>
+      <div class="autor">
+        <div>
+    <div class="nombre">Montero <small> 100,000 visitas</small></div>
+    <div class="nombre" style="float:right"> 5-8-2016 </div>
+        </div>
+      </div>
+    </div>
+    <a class="direccion" [routerLink]="['/video-player', video.id]">
+    </a>
+  </div>		
+</div>

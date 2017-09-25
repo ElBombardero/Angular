@@ -1,0 +1,9 @@
+.container {
+    max-width: 600px;
+    position: relative;
+    float: left;
+}
+.elemento-slider{
+    max-height: 305px;
+    overflow: hidden;
+}

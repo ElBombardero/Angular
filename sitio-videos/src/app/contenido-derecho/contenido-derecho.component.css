@@ -1,0 +1,17 @@
+.contenedor-anuncio {
+    width:100%;
+    height:200px;
+    border-radius: 5px;
+}
+.anuncio-pagina {
+    width:100%;
+    height:100%;
+}
+
+.publicidad p{
+    border: 1px;
+    color:#969494;
+    border-radius: 5px;
+    font-family: fantasy;
+    font-weight: 900;
+}

@@ -1,0 +1,158 @@
+.breadcrumb {
+    background-color: white;
+    border:1px;
+    border-color: gray;
+    border-style: solid;
+    max-width: 680px;
+}
+
+.container {
+    max-width: 87%;
+}
+.video {
+    max-width: 680px;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.3);
+    box-sizing:border-box;
+    min-width: 680px;
+}
+
+.logo {
+    right: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+
+.informacion-video {
+    margin-left:2px;
+    max-width: 650px;
+}
+.detalles {
+    float: left;
+}
+.vistas {
+    color:#ADADAD;
+}
+.titulo {
+    font-weight: 600;
+}
+
+.descripcion {
+    max-width:500px;
+}
+.reaccion {
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.reaccion-negativa {
+    margin-right: 60px;
+    color:rgb(150, 5, 5);
+    cursor: pointer;
+}
+.reaccion-negativa:hover {
+    color:red;
+}
+
+.reaccion-negativa:active {
+    color:black;
+}
+
+.reaccion-positiva {
+    color:dodgerblue;
+    text-transform:uppercase;
+    cursor: pointer;
+}
+.reaccion-positiva:hover {
+    color: #0808BD;
+}
+
+.reaccion-positiva:active {
+    color: green;
+}
+.span{
+    display:block;
+    background-color:#400090;
+    background:transparent -webkit-linear-gradient(left,#00FA3E 0,#04FF64 100%) repeat scroll 0 0;
+    background:transparent linear-gradient(to right,#EB0D0D 0,#0624CC 100%) repeat scroll 0 0;
+    height:4px;
+}
+
+.span:hover {}
+.numeros-positivos {
+    color: blue;
+    float: right;
+}
+.numeros-negativos {
+    color:red;
+}
+
+.caja {
+    box-sizing:border-box;
+    background-color: white;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.3);
+    max-width:700px;
+    padding:0 5px;
+    border-radius:15px;
+    position: relative;
+    z-index: 2;
+}
+.controles {
+    font-size: 30px;
+}
+
+.sugerencias {
+    margin-top: 80px;
+}
+
+.sugerencias h3 {
+    font-size: 20px;
+}
+
+.sugerencias h4 {
+    font-size: 15px;
+}
+
+
+
+.progreso {
+    display: block;
+    width: 100%;
+    background: #b1b1b1;
+    height: 30px;
+}
+
+.barra {
+    height: 30px;
+    background: #FF0000;
+    width: 0%;
+    display: block;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: green;
+}
+
+
+.reciente {
+    color:red;
+}
+
+
+@media screen and (max-width:900px){
+    .video {
+        height: 260px;
+        width: 260px;
+        min-width: auto;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
