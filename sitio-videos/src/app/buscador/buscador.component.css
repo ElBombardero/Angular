@@ -1,3 +1,36 @@
+.buscar {
+    max-width: 350px;
+    margin: auto;
+}
+
+.imagen-logo {
+    max-width: 250px;
+}
 .cuadro{
-    margin-left: 10px;
+    text-align: center;
+    display: inline-block;
+}
+.separador {
+    min-height: 500px;
+}
+
+.texto {
+    outline: 0;
+    height: 50px;
+    background: transparent;
+    border-style: solid;
+    width: 75%;
+    border-bottom: 0;
+    padding: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: none;
+    overflow:hidden;
+    float: left;
+}
+
+.boton {
+    width: 25%;
+    height: 50px;
+    text-align: center;
 }

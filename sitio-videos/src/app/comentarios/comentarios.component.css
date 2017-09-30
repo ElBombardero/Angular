@@ -11,10 +11,8 @@
     float: left;
 }
 .boton-comentar{
-    display: inline;
     width: 100%;
     text-align: center;
-
 }
 .comentar textarea{
     outline: 0;
@@ -28,6 +26,9 @@
     resize: none;
     width: 100%;
 	overflow:hidden;
+}
+
+.comentar textarea:focus ~ .boton-comentar {
 }
 
 .comentar textarea:focus ~ .linea {

@@ -18,6 +18,7 @@ import { ContenidoDerechoComponent } from './contenido-derecho/contenido-derecho
 import { AgregarVideoComponent } from './agregar-video/agregar-video.component';
 import { VideosComponent } from './videos/videos.component';
 import { SliderComponent } from './slider/slider.component';
+import { AgregarArticuloComponent } from './agregar-articulo/agregar-articulo.component';
 
 // Definir rutas
 const rutasApp = [
@@ -26,6 +27,7 @@ const rutasApp = [
   { path: 'video-player/:videoID', component: VideoPlayerComponent},
   { path: 'inicio', component: InicioComponent},
   { path: 'slider', component: SliderComponent},
+  { path: 'agregar', component: AgregarVideoComponent},
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path: '**', component: InicioComponent}
 ];
@@ -44,7 +46,8 @@ const rutasApp = [
     ContenidoDerechoComponent,
     AgregarVideoComponent,
     VideosComponent,
-    SliderComponent
+    SliderComponent,
+    AgregarArticuloComponent
   ],
   imports: [
     // importar rutas

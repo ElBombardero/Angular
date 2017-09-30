@@ -7,29 +7,22 @@ import {Http, Response} from '@angular/http';
   styleUrls: ['./agregar-video.component.css']
 })
 export class AgregarVideoComponent implements OnInit {
-  constructor( private http: Http ) { }
+  constructor( private http: Http) { }
   arreglo: Array<object>;
+  list: string[] = ['nombre', 'titulo', 'edad'];
   parametros = { nombre: 'nombre', titulo: 'titulo' };
   ngOnInit() {
+    console.log(this.list[1]);
   }
 
   nuevoVideo(): void {
       const parametroFalso = 'parametro falso';
     this.http.post('http://localhost/practicas/angularjs/api/agregarVideo.php', this.parametros)
     .subscribe((res: Response) => {
-      console.log('se mando la vaina');
+      console.log('se mando :' + this.parametros);
     });
   }
 
-  enviarDatos() {
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    const order = 'order=foobar';
 
-    this.http.post('http://myserver/processorder.php', order, {
-    }).subscribe(res => {
-        console.log('post result %o', res);
-    });
-  }
 
 }

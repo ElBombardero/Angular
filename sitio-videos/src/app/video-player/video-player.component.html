@@ -9,9 +9,10 @@
       <div *ngIf="videoInfo" >
         <div class="video-titulo-descripcion">
           <video class="video" #videoPlayer controls >
-              <source src="mov_bbb.mp4" type="video/mp4">
-              <source src="mov_bbb.ogg" type="video/ogg">
+            <source src="mov_bbb.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
             <source src="{{videoInfo.video_src}}">
+            <span class="logo">ccc</span>
           </video>
           <div class="informacion-video">
             <div class="detalles">

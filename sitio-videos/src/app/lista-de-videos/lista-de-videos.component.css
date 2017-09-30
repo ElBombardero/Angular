@@ -9,7 +9,14 @@
     border-color: gray;
     border-style: solid;
 }
-
+.agregarVideo {
+	font-weight: 700;
+	color: #969494;
+}
+.agregarVideo:hover {
+	cursor: pointer;
+	color:#14149B;
+}
 @media screen and (max-width:900px){
 	
 	.videos-de-lista {

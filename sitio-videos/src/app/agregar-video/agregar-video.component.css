@@ -4,9 +4,11 @@
     padding:0 5px;
     border-radius:15px;
     z-index: 2;
-    max-width: 400px;
-    position: fixed;
-    width: 400px;
+    background-color: white;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 40px; 
 }
 
 .input {
@@ -41,6 +43,7 @@
   .titulo-caja {
     color:dodgerblue;
     font-weight: 700;
+    margin: auto;
   }
 
   .boton-agregar:hover {

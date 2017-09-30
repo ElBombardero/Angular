@@ -4,7 +4,9 @@
 			<ol class="breadcrumb">
 				<li class=""><a [routerLink]="['/inicio']">Inicio</a></li>
 				<li class="active">Lista de video</li>
+				<li data-toggle="modal" data-target="#myModal" title="agregar video" class="pull-right agregarVideo">+</li>
 			</ol>
+			<app-agregar-video class="modal fade" id="myModal" role="dialog"></app-agregar-video>
 			<app-videos></app-videos>
 		</section>
 		<app-contenido-derecho></app-contenido-derecho>

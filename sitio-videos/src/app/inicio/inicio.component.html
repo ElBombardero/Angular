@@ -3,9 +3,13 @@
     <article class="post">
       <div class="migas">
           <ol class="breadcrumb">
-              <li class="active"><a href="#">Inicio</a></li>
+              <li class="active">Inicio</li>
+              <li data-toggle="modal" data-target="#agregarArticulo" title="agregar articulo" class="agregarArticulo-li pull-right">+</li>
+              <li [routerLink]="['/agregar']" class="agregarArticulo-li pull-right"> ˄ </li>
           </ol>
       </div>
+      <li class="fa fa-comments fa-lg"><small class="comentarioNo"> 200 </small></li>
+      <app-agregar-articulo class="modal fade" id="agregarArticulo" role="dialog"></app-agregar-articulo>
       <div class="slider-container">
       </div>
       <div class="media">
@@ -13,12 +17,14 @@
             <img src='http://assets2.sportsnet.ca/wp-content/uploads/2016/11/romero_yoel-1040x572.jpg' />
         </a>
         <h2 class="post-title-inicio">Yoel Romero el tipo que esta dando la verdadera para en las MMA</h2>
-        <p><span class="post-fecha">15 de julio 2006</span>  por <span class="post-autor"><a href="#">Fulano de tal.</a></span></p>
+        <p><span class="post-fecha">15 de julio 2006</span>  por <span class="post-autor"><a href="#">Fulano de tal.</a></span>
+          <li class="fa fa-comments fa-lg"><small class="comentarioNo"> 200 </small></li></p>
         <p class="post-contenido text-justify">
             yoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero
             yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero
             yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel
         </p>
+        <a href="#" class="direccion-articulo"></a>
       </div>
     </article><hr>
     <article class="post">
@@ -38,15 +44,14 @@
     <article class="post">
       <div class="media">
         <a href='#' class="Contenedor-Imagen pull-left">
-            <img src='http://assets2.sportsnet.ca/wp-content/uploads/2016/11/romero_yoel-1040x572.jpg' />
+            <img src='https://usatmmajunkie.files.wordpress.com/2016/12/ronda-rousey-ufc-207-4.jpg' />
         </a>
-        <h2 class="post-title-inicio">Yoel Romero el tipo que esta dando la verdadera para en las MMA</h2>
+        <h2 class="post-title-inicio">Ronda la mas malona</h2>
         <p><span class="post-fecha">15 de julio 2006</span>  por <span class="post-autor"><a href="#">Fulano de tal.</a></span></p>
         <p class="post-contenido text-justify">
-            yoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero
-            yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero
-            yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel
-            Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero.
+            Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda 
+            Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda 
+            Ronda Ronda Ronda Ronda 
         </p>
       </div>
     </article><hr>
@@ -62,21 +67,22 @@
             yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero
             yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel
             Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero.
+            Yoel Romeroyoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel
+            Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero.
         </p>
       </div>
     </article><hr>
     <article class="post">
       <div class="media">
         <a href='#' class="Contenedor-Imagen pull-left">
-            <img src='http://assets2.sportsnet.ca/wp-content/uploads/2016/11/romero_yoel-1040x572.jpg' />
+            <img src='https://usatmmajunkie.files.wordpress.com/2017/01/ronda-rousey-ufc-207-7.jpg' />
         </a>
-        <h2 class="post-title-inicio">Yoel Romero el tipo que esta dando la verdadera para en las MMA</h2>
+        <h2 class="post-title-inicio">Ronda la mas malona</h2>
         <p><span class="post-fecha">15 de julio 2006</span>  por <span class="post-autor"><a href="#">Fulano de tal.</a></span></p>
         <p class="post-contenido text-justify">
-            yoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero yoel romero Yoel Romeroyoel romero Yoel Romero
-            yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero
-            yoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romeroyoel romero Yoel Romero,yoel romero Yoel Romero. Yoel
-            Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero Yoel Romero yoel romero.
+            Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda 
+            Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda Ronda 
+            Ronda Ronda Ronda Ronda 
         </p>
       </div>
     </article><hr>
