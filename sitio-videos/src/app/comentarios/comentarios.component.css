@@ -10,9 +10,23 @@
 .lado-izquierdo {
     float: left;
 }
+
+.comentar {
+    margin-top: 10px;
+    width:100%;
+    margin-bottom: 20px;
+}
 .boton-comentar{
     width: 100%;
     text-align: center;
+}
+
+.usuario-invitado {
+    visibility: hidden;
+}
+
+.comentar textarea:focus ~ .usuario-invitado{
+    visibility: visible
 }
 .comentar textarea{
     outline: 0;
@@ -24,11 +38,7 @@
     font-size: 14px;
     box-sizing: border-box;
     resize: none;
-    width: 100%;
 	overflow:hidden;
-}
-
-.comentar textarea:focus ~ .boton-comentar {
 }
 
 .comentar textarea:focus ~ .linea {
@@ -53,9 +63,6 @@
     background-color: white;
 }
 
-.comentar {
-    margin-top: 10px;
-}
 .caja {
     box-sizing:border-box;
     background-color: white;

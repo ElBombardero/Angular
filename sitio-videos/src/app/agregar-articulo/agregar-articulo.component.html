@@ -5,12 +5,16 @@
       <h4 class="modal-title">Agregar Articulo</h4>
     </div>
     <div class="modal-body">
-      <input type="text" placeholder="titulo" class="input">
-      <textarea class="tinymce"> </textarea>
+      <input type="text" id='titulo' placeholder="titulo" class="input">
+      <input type="text" id='imagen' placeholder="Imagen" class="input">
+      <textarea id='contenido' class="tinymce"> </textarea> <br><hr>
+      <strong>Preview: </strong><small> Esta es la vista previa que sera visualizado en el inicio </small>
+      <textarea id='contenidoP' class="tinymce"> </textarea>
       <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+      <div id='contenedorT'> </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Agregar</button>
+      <button type="button" class="btn btn-default" (click)="agregarArticulo()" data-dismiss="modal">Agregar</button>
     </div>
   </div>
 </div>

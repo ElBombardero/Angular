@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import {Http, Response} from '@angular/http';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  articulos: Array<object>;
+  constructor(private http: Http) { }
 
   ngOnInit() {
+    this.peticionExterna();
+  }
+
+
+peticionExterna(): void {
+
+    this.http.request('http://localhost/practicas/angularjs/api/lista-de-articulos.php')
+    .subscribe( (res: Response) => {
+      this.articulos = res.json();
+      console.log( res.json() );
+    });
   }
 
 }

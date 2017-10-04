@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <section class="col-md-9">
+      <ol class="breadcrumb">
+          <li class=""><a [routerLink]="['/inicio']">Inicio</a></li>
+          <li class="active">articulo</li>
+      </ol>
+      <div *ngFor="let articulo of informacionArticulo">
+        <article class="clear-fix articulo">
+          <div [style.background-image]="'url('+ articulo.imagenURL +')'" class="contenedor-imagen-posteada">
+            <div class="imagen-posteada">
+                <h3 class="h4">{{articulo.titulo}}</h3>
+            </div>
+          </div>
+          <span class="glyphicon" style="margin-left:2px;">&#xe105; {{articulo.visitas}}</span><hr>
+          <div id='contenedor' class="contenido-articulo">{{articulo.contenidoArticulo}}
+          </div>
+        </article><hr class="hr">
+      </div>
+    </section>
+    <app-contenido-derecho class="hidden-xs hidden-sm"></app-contenido-derecho>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+
+  });
+</script>

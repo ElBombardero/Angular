@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter} from '@angular/core';
 import {Http, Response} from '@angular/http';
+declare var $: any;
 
 @Component({
   selector: 'app-agregar-video',
@@ -8,19 +9,27 @@ import {Http, Response} from '@angular/http';
 })
 export class AgregarVideoComponent implements OnInit {
   constructor( private http: Http) { }
-  arreglo: Array<object>;
-  list: string[] = ['nombre', 'titulo', 'edad'];
-  parametros = { nombre: 'nombre', titulo: 'titulo' };
+
+  @Output()
+
+  Actualizar: EventEmitter<Number> = new EventEmitter();
   ngOnInit() {
-    console.log(this.list[1]);
   }
 
-  nuevoVideo(): void {
-      const parametroFalso = 'parametro falso';
-    this.http.post('http://localhost/practicas/angularjs/api/agregarVideo.php', this.parametros)
-    .subscribe((res: Response) => {
-      console.log('se mando :' + this.parametros);
-    });
+  agregarVideo () {
+    const datosFormulario = {
+    clave: $('#Clave').val(),
+    titulo: $('#Titulo').val(),
+    descripcion: $('#Descripcion').val(),
+    videoURL: $('#Video-url').val(),
+    imagenURL: $('#imagen-url').val(),
+    };
+    $.get('http://localhost/practicas/angularjs/api/agregarVideo.php', datosFormulario, ProcesarDatos);
+
+    function ProcesarDatos(datos_devueltos) {
+        console.log(datos_devueltos);
+    }
+    this.Actualizar.emit();
   }
 
 

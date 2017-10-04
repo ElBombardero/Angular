@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {Http, Response} from '@angular/http';
+declare var $: any;
 
 @Component({
   selector: 'app-video-player',
@@ -10,21 +11,17 @@ import {Http, Response} from '@angular/http';
 export class VideoPlayerComponent implements OnInit {
   @ViewChild('videoPlayer')
   videoPlayer: any;
-  duracion: string;
-  progreso: number;
-  posicion: string;
-  css: string;
-  posicionBarra: string;
-
   videoInfo: any;
   id: String;
+  idvideo: any;
   rutaServer: String;
+  numerosPositivos: number;
+  numerosNegativos: number;
 
   constructor(
     private route: ActivatedRoute,
     private http: Http
   ) { }
-
   ngOnInit() {
     this.route.params.subscribe( params => {
       this.id = params['videoID'];
@@ -36,44 +33,29 @@ export class VideoPlayerComponent implements OnInit {
   obtenerInfoVideo(): void {
     this.http.request('http://localhost/practicas/angularjs/api/info-video.php?id=' + this.id)
     .subscribe((res: Response) => {
-      this.videoInfo = res.json()[0];
+      this.videoInfo = res.json();
+      for (let i = 0; i < this.videoInfo.length; i++) {
+        const obj = this.videoInfo[i];
+        this.idvideo = obj['uniqueID'];
+        this.numerosPositivos = obj['reaccionPositiva'];
+        this.numerosNegativos = obj['reaccionNegativa'];
+      }
     });
   }
 
-  reproducirVideo(): void {
-    this.videoPlayer.nativeElement.play();
-  }
+  reaccionVideo(Like) {
+    const reaccion = {
+      gustar: Like,
+      idvideo: this.idvideo,
+      numerosP: this.numerosPositivos,
+      numerosN: this.numerosNegativos,
+    };
 
-  detenerVideo(): void {
-    this.videoPlayer.nativeElement.currentTime = 70;
-  }
+    $.get('http://localhost/practicas/angularjs/api/reaccionVideo.php', reaccion, Procesar);
 
-  pausarVideo(): void {
-    if (this.videoPlayer.nativeElement.play()) {
-      this.videoPlayer.nativeElement.pause();
-    }else {
-      this.videoPlayer.nativeElement.play();
-    }
-  }
-
-  moverVideo(): void {
-    this.videoPlayer.nativeElement.currentTime = 20;
-  }
-
-  onMetadata(e, video): void {
-    const minutos = Math.floor(video.duration / 60);
-    const segundos =  Math.floor(video.duration);
-
-    this.duracion = '( ' + minutos + ':' + segundos;
-  }
-  onTimeUpdate(e, video): void {
-    this.progreso = Math.floor((video.currentTime / video.duration) * 100);
-    const posicionBarra = this.progreso;
-    const minutos = Math.floor(video.currentTime / 60);
-    const segundos =  Math.floor(video.currentTime);
-  this.posicion = minutos + ':' + segundos;
-  const css: HTMLElement = document.getElementById('myBar');
-  css.style.width = posicionBarra + '%';
+        function Procesar(datos_devueltos) {
+            console.log(datos_devueltos);
+        }
   }
 
 }

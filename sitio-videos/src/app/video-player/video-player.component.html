@@ -6,11 +6,9 @@
           <li class=""><a [routerLink]="['/lista-video']">Lista de Videos</a></li>
           <li class="active">video</li>
       </ol>
-      <div *ngIf="videoInfo" >
+      <div *ngFor="let videoInfo of videoInfo" >
         <div class="video-titulo-descripcion">
           <video class="video" #videoPlayer controls >
-            <source src="mov_bbb.mp4" type="video/mp4">
-            <source src="mov_bbb.ogg" type="video/ogg">
             <source src="{{videoInfo.video_src}}">
             <span class="logo">ccc</span>
           </video>
@@ -21,18 +19,23 @@
               <p class="descripcion">{{videoInfo.descripcion}}</p>
             </div>
             <div class="reaccion"> 
-              <li class="fa fa-thumbs-o-down fa-2x reaccion-negativa" aria-hidden="true"> </li>
-              <li type="button" class="fa fa-thumbs-o-up fa-2x reaccion-positiva" aria-hidden="true"></li>
+              <li class="fa fa-thumbs-o-down fa-2x reaccion-negativa" (click)="reaccionVideo('no')" aria-hidden="true"> </li>
+              <li type="button" class="fa fa-thumbs-o-up fa-2x reaccion-positiva" (click)="reaccionVideo('si')" aria-hidden="true"></li>
               <span class="span caja"></span>
-              <strong class="numeros-negativos">-25</strong>  <strong class="numeros-positivos"> 200 </strong>
+              <strong class="numeros-negativos">{{videoInfo.reaccionNegativa}}</strong>  <strong class="numeros-positivos">{{videoInfo.reaccionPositiva}}</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <app-contenido-derecho></app-contenido-derecho>
+    <div class="contenido-derecho">
+      <app-contenido-derecho class="hidden-xs hidden-sm"></app-contenido-derecho>
+    </div>
   </div>
   <section style="float:left">
-      <app-comentarios></app-comentarios>
+    <div *ngFor="let videoInfo of videoInfo">
+      <app-comentarios [idUnica]="videoInfo.uniqueID"></app-comentarios>
+      <app-contenido-derecho class="visible-xs visible-sm"></app-contenido-derecho>
+    </div>
   </section>
 </div>

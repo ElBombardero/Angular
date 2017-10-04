@@ -1,94 +1,29 @@
 <div class="comentar">
-  <textarea rows="3" placeholder="comentar" class="area-comentar" id="comentar-text"> </textarea>  
+  <textarea rows="3" cols="60" class="area-comentar" id="comentar-text"> </textarea>  
   <div class="linea"></div>
-  <button class="btn btn-default boton-comentar" id="comentar-boton">comentar</button>
+  <input value="invitado" id='usuarioN' class="usuario-invitado" disabled>
+  <button class="btn btn-default boton-comentar" (click)='comentar()' id="comentar-boton">comentar</button>
 </div>
-<div class="comentarios ">
-  <div class="contenedor-comentario">
-    <p class="caja">
-      comentarios works!
-      <strong class="lado-derecho">
-        <i class="fa fa-angle-down reaccion-negativa" aria-hidden="true"></i>
-        <i class="fa fa-angle-up reaccion-positiva" aria-hidden="true"></i>
-        <strong class="numeros-negativos">-1</strong> / <strong class="numeros-positivos"> + 99 </strong>
-      </strong>
-    </p>
-    <div class="usuario-comentario">
-      <img class="imagen" src="https://s.yimg.com/wm/modern/images/caution.png" role="presentation" aria-hidden="true" width="auto" height="auto">
-      <div class="caption">
-        <small class="pull-right">7-9-2040</small>
-        <h4><a href="">Usuario</a>
-        </h4>
-        <p>Este es mi comentario. Este es mi comentario.Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-        </p>
+<div *ngFor="let comentario of comentarios" class="todos-los-comentarios">
+  <div class="comentarios ">
+    <div class="contenedor-comentario">
+      <p class="caja">
+        comentarios works!
+        <strong class="lado-derecho">
+          <i class="fa fa-angle-down reaccion-negativa" (click)="reaccionar('no', comentario.idComentario, comentario.reaccionNegativa, comentario.reaccionPositiva)" aria-hidden="true"></i>
+          <i class="fa fa-angle-up reaccion-positiva" (click)="reaccionar('si', comentario.idComentario, comentario.reaccionNegativa, comentario.reaccionPositiva)" aria-hidden="true"></i>
+          <strong class="numeros-negativos">{{comentario.reaccionNegativa}}</strong> / <strong class="numeros-positivos">+{{comentario.reaccionPositiva}}</strong>
+        </strong>
+      </p>
+      <div class="usuario-comentario">
+        <img class="imagen" src="{{comentario.avatar}}" role="presentation" aria-hidden="true" width="auto" height="auto">
+        <div class="caption">
+          <small class="pull-right">{{comentario.fecha}}</small>
+          <h4><a href="">{{comentario.usuario}}</a>
+          </h4>
+          <p>{{comentario.comentario}}</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="contenedor-comentario">
-    <p class="caja">
-      comentarios works!
-      <strong class="lado-derecho">
-        <i class="fa fa-angle-down reaccion-negativa" aria-hidden="true"></i>
-        <i class="fa fa-angle-up reaccion-positiva" aria-hidden="true"></i>
-        <strong class="numeros-negativos">-10</strong> / <strong class="numeros-positivos"> +4 </strong>
-      </strong>
-    </p>
-    <div class="usuario-comentario">
-      <img class="imagen" src="https://static.comicvine.com/uploads/square_small/11112/111122896/5402108-goku_v2_by_saodvd-dac3ion.png" role="presentation" aria-hidden="true">
-      <div class="caption">
-        <small class="pull-right">7-9-2040</small>
-        <h4><a href="">Usuario</a>
-        </h4>
-        <p>Este es mi comentario. Este es mi comentario.Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="contenedor-comentario">
-    <p class="caja">
-      comentarios works!
-      <strong class="lado-derecho">
-        <i class="fa fa-angle-down reaccion-negativa" aria-hidden="true"></i>
-        <i class="fa fa-angle-up reaccion-positiva" aria-hidden="true"></i>
-        <strong class="numeros-negativos">-225</strong> / <strong class="numeros-positivos"> +2 </strong>
-      </strong>
-    </p>
-    <div class="usuario-comentario">
-      <img class="imagen" src="http://vignette1.wikia.nocookie.net/narutofanon/images/f/ff/1024px-Sharingan_triple.svg.png/revision/latest?cb=20140821231448">
-      <div class="caption">
-        <small class="pull-right">7-9-2040</small>
-        <h4><a href="">Usuario</a>
-        </h4>
-        <p>Este es mi comentario. Este es mi comentario.Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="contenedor-comentario">
-    <p class="caja">
-      comentarios works!
-      <strong class="lado-derecho">
-        <i class="fa fa-angle-down reaccion-negativa" aria-hidden="true"></i>
-        <i class="fa fa-angle-up reaccion-positiva" aria-hidden="true"></i>
-        <strong class="numeros-negativos">-25</strong> / <strong class="numeros-positivos"> + 200 </strong>
-      </strong>
-    </p>
-    <div class="usuario-comentario">
-      <img class="imagen" src="http://vignette2.wikia.nocookie.net/narutofanon/images/e/ec/Haruki_Eternal_Mangekyou_Sharingan.png/revision/latest?cb=20170128070549" role="presentation" aria-hidden="true" width="auto" height="auto">
-      <div class="caption">
-        <small class="pull-right">7-9-2040</small>
-        <h4><a href="">Usuario</a></h4>
-        <p>Este es mi comentario. Este es mi comentario.Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-            Este es mi comentario. Este es mi comentario. Este es mi comentario. Este es mi comentario. 
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+</div><hr>
