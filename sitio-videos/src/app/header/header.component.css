@@ -6,11 +6,19 @@
     padding-bottom: 5px;
 }
 
+.barra {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
 .elementos-barra{
     margin-top: 5px;
 }
 .navbar a{
-    color:#fff;
+    color:rgb(0, 0, 0);
 }
 
 .letra1 {
@@ -32,7 +40,38 @@
 .direccion:hover{
     color:black;
 }
-
+.dropdown-menu {
+    padding-top:4;
+}
+.correo-clave {
+    width: 94%;
+    margin-left: 3%;
+    padding-left: 6px;
+    height: 35px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+    color: #3a3f51;
+    background-color: #fff;
+    border: 1px solid #dde6e9;
+    border-radius: 4px;
+}
+.divider {
+    margin-bottom: 2px;
+    margin-top:0;
+}
+.login-button {
+    margin:auto;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 4%;
+    margin-bottom: 0px;
+    margin-top:1px;
+    background-color: rgb(14, 102, 185);
+    border:1px;
+    color: white;
+    border-style: solid;
+    border-color: rgb(14, 102, 185);
+}
 
 .navbar i{
     color: #1B0F46;

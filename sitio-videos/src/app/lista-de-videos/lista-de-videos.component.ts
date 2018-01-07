@@ -9,18 +9,19 @@ declare var $: any;
 })
 export class ListaDeVideosComponent implements OnInit {
 
+  sesion: String = 'No autorizado';
   constructor( private http: Http) { }
 
   ngOnInit() {
+    $('#agregar-video').css({'visibility': 'hidden', });
+    this.mostrarContenido();
   }
 
-OcultarContenido() {
-  if ($('#contenido').is(':visible')) {
-      $('#contenido').hide('slow');
-      console.log('ocultando contenido');
-  } else {
-      $('#contenido').show('slow');
-      console.log('mostrando contenido');
+mostrarContenido() {
+  if (this.sesion !== 'No autorizado' && this.sesion !== '') {
+      $('#agregar-video').css({
+        'visibility': 'visible',
+       });
   }
 }
 

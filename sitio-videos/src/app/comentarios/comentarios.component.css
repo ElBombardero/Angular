@@ -11,6 +11,13 @@
     float: left;
 }
 
+.tipoA{
+    margin-left: 10px;
+    color:dodgerblue;
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .comentar {
     margin-top: 10px;
     width:100%;
@@ -23,6 +30,7 @@
 
 .usuario-invitado {
     visibility: hidden;
+    width: 100%;
 }
 
 .comentar textarea:focus ~ .usuario-invitado{
@@ -30,7 +38,7 @@
 }
 .comentar textarea{
     outline: 0;
-    background: transparent;
+    background: white;
     width: 100%;
     border-style: solid;
     border-bottom: 0;

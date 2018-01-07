@@ -18,6 +18,7 @@ export class ComentariosComponent implements OnInit {
   @Input() idUnica: any;
   ngOnInit() {
     this.verComentarios();
+    this.textarea();
   }
   verComentarios() {
     this.http.request('http://localhost/practicas/angularjs/api/comentarios-idvideo.php?id=' + this.idUnica)
@@ -46,7 +47,7 @@ export class ComentariosComponent implements OnInit {
     const mes = fecha.getMonth() + 1;
     const datosFormulario = {
       comentario: $('#comentar-text').val(),
-      usuario: $('#usuarioN').val(),
+      usuario: 'invitado',
       fecha: fecha.getDate() + '/' + mes + '/' + fecha.getFullYear(),
       videoID: this.idUnica,
       avatar: 'http://cdn.lowkickmma.com/wp-content/uploads/2017/05/Jon-Jones--640x449.jpg',
@@ -60,4 +61,13 @@ export class ComentariosComponent implements OnInit {
     this.verComentarios();
     $('#comentar-text').val('');
   }
+
+  textarea() {
+    $('.theinput-2').focus(function() {
+      $('.contenedor').css('border-color', 'LightSteelBlue');
+    }).blur(function() {
+      $('.contenedor').css('border-color', 'Silver');
+    });
+  }
+
 }

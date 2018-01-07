@@ -1,14 +1,13 @@
 <div class="comentar">
   <textarea rows="3" cols="60" class="area-comentar" id="comentar-text"> </textarea>  
   <div class="linea"></div>
-  <input value="invitado" id='usuarioN' class="usuario-invitado" disabled>
+  <!--<input value="invitado" id='usuarioN' class="usuario-invitado" disabled>-->
   <button class="btn btn-default boton-comentar" (click)='comentar()' id="comentar-boton">comentar</button>
 </div>
 <div *ngFor="let comentario of comentarios" class="todos-los-comentarios">
   <div class="comentarios ">
     <div class="contenedor-comentario">
       <p class="caja">
-        comentarios works!
         <strong class="lado-derecho">
           <i class="fa fa-angle-down reaccion-negativa" (click)="reaccionar('no', comentario.idComentario, comentario.reaccionNegativa, comentario.reaccionPositiva)" aria-hidden="true"></i>
           <i class="fa fa-angle-up reaccion-positiva" (click)="reaccionar('si', comentario.idComentario, comentario.reaccionNegativa, comentario.reaccionPositiva)" aria-hidden="true"></i>

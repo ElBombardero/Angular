@@ -3,8 +3,8 @@
     <div class="migas">
         <ol class="breadcrumb">
             <li class="active">Inicio</li>
-            <li data-toggle="modal" data-target="#agregarArticulo" title="agregar articulo" class="agregarArticulo-li pull-right">+</li>
-            <li [routerLink]="['/agregar']" class="agregarArticulo-li pull-right"> ˄ </li>
+            <li id='agregar-articulo1'data-toggle="modal" data-target="#agregarArticulo" title="agregar articulo" class="agregarArticulo-li pull-right">+</li>
+            <li id='agregar-articulo2'[routerLink]="['/agregar']" class="agregarArticulo-li pull-right"> ˄ </li>
         </ol>
     </div>
     <app-agregar-articulo class="modal fade" id="agregarArticulo" role="dialog"></app-agregar-articulo>
@@ -12,16 +12,18 @@
     </div>
     <article *ngFor="let articulo of articulos" class="post">
       <div class="media">
-        <a href='#' class="Contenedor-Imagen pull-left">
+        <a href='#' class="Contenedor-Imagen">
             <img src='{{articulo.imagenURL}}' />
         </a>
-        <h2 class="post-title-inicio">{{articulo.titulo}}</h2>
-        <p><span class="post-fecha">{{articulo.fecha}}</span>  por <span class="post-autor"><a href="#">{{articulo.autor}}</a></span>
-          <li class="fa fa-comments fa-lg"><small class="comentarioNo"> {{articulo.visitas}} </small></li></p>
-        <p class="post-contenido text-justify">{{articulo.contenidoPreview}}</p>
-        <a [routerLink]="['/articulo', articulo.idArticulo]"  class="direccion-articulo"></a>
+        <div class="texto">
+          <h2 class="post-title-inicio">{{articulo.titulo}}</h2>
+          <p><span class="post-fecha">{{articulo.fecha}}</span>  por <span class="post-autor"><a href="#">{{articulo.autor}}</a></span>
+            <li class="fa fa-comments fa-lg"><small class="comentarioNo"> {{articulo.visitas}} </small></li></p>
+          <p class="post-contenido text-justify">{{articulo.contenidoPreview}}</p>
+          <a [routerLink]="['/articulo', articulo.idArticulo]"  class="direccion-articulo"></a>
+        </div>
       </div><br>
     </article><hr>
   </section>
-  <app-contenido-derecho></app-contenido-derecho>
+  <app-contenido-derecho class="col-md-3"></app-contenido-derecho>
 </div>

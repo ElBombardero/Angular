@@ -21,7 +21,8 @@
 }
 
 .posteo:hover{
-	box-shadow:0 0 0 1px rgba(0, 0, 0, .15) inset, 0 1px 6px rgba(104, 101, 101, 0.71)
+	box-shadow:0 0 0 1px rgba(0, 0, 0, .15) inset, 0 1px 6px rgba(104, 101, 101, 0.71);
+
 }
 
 .contenedor-imagen {
@@ -31,6 +32,10 @@
 .imagen{
 	position:relative;
 	z-index:1;
+}
+.imagen img{
+	width: 158px;
+	height: 158px;
 }
 
 .imagen:after{
@@ -74,10 +79,15 @@
 	position: relative;
 	float: right;
 	cursor: pointer;
+	visibility: hidden;
 }
 
 .icono-x:hover {
 	color:#AC0F0F;
+}
+
+.posteo:hover .icono-x {
+	visibility: visible;
 }
 .titulo a{
 	text-decoration:none;
@@ -108,7 +118,14 @@
 	top:0
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:800px){
+	.contenedor-imagen {
+		float:unset;
+	}
+	.imagen img{
+		width: 100%;
+		height: unset;
+	}
 
 	
 }

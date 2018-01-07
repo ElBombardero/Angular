@@ -1,9 +1,9 @@
 
 <div *ngFor="let video of videos" class=" posteo">
   <div class=" contenedor-imagen">
-    <a href="#">
+    <a [routerLink]="['/video-player', video.id]">
       <div class="imagen">
-        <img src="{{video.imagen_src}}" alt="{{video.titulo}}" width="158" height="158">
+        <img src="{{video.imagen_src}}" alt="{{video.titulo}}">
       </div>
     </a>
   </div>

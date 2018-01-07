@@ -7,24 +7,31 @@
       </ol>
       <div *ngFor="let articulo of informacionArticulo">
         <article class="clear-fix articulo">
-          <div [style.background-image]="'url('+ articulo.imagenURL +')'" class="contenedor-imagen-posteada">
-            <div class="imagen-posteada">
-                <h3 class="h4">{{articulo.titulo}}</h3>
+          <div class="">
+            <div [style.background-image]="'url('+ articulo.imagenURL +')'" class="contenedor-imagen-posteada">
+              <div class="imagen-posteada">
+                  <h3 class="h4">{{articulo.titulo}}</h3>
+              </div>
             </div>
+            <div class="reacciones">
+              <i class="fa fa-eye reaccion">{{articulo.visitas}} </i>
+              <i class="fa fa-clock-o reaccion">{{articulo.fecha}} </i>
+              <i class="fa fa-user-o reaccion">{{articulo.autor}} </i>
+              <i class="fa fa-edit reaccion">{{articulo.visitas}}</i>
+              <i class="fa fa-share reaccion">{{articulo.visitas}}</i>
+            </div><hr>
           </div>
-          <span class="glyphicon" style="margin-left:2px;">&#xe105; {{articulo.visitas}}</span><hr>
-          <div id='contenedor' class="contenido-articulo">{{articulo.contenidoArticulo}}
+          <div id='contenedor' onload="ver()" class="contenido-articulo">
+            {{articulo.contenidoArticulo}}
           </div>
         </article><hr class="hr">
+        <button class="btn btn-primary" (click)="ver()">ver </button>
       </div>
     </section>
-    <app-contenido-derecho class="hidden-xs hidden-sm"></app-contenido-derecho>
+    <app-contenido-derecho class=" col-md-3 hidden-xs hidden-sm"></app-contenido-derecho>
   </div>
 </div>
 
 
 <script>
-  $(document).ready(function(){
-
-  });
 </script>

@@ -12,7 +12,6 @@ export class AgregarVideoComponent implements OnInit {
 
   @Output()
 
-  Actualizar: EventEmitter<Number> = new EventEmitter();
   ngOnInit() {
   }
 
@@ -29,7 +28,6 @@ export class AgregarVideoComponent implements OnInit {
     function ProcesarDatos(datos_devueltos) {
         console.log(datos_devueltos);
     }
-    this.Actualizar.emit();
   }
 
 

@@ -9,33 +9,32 @@
       <div *ngFor="let videoInfo of videoInfo" >
         <div class="video-titulo-descripcion">
           <video class="video" #videoPlayer controls >
+            <track kind="captions" src="assets/fonts/logo.vtt" label="Logo" default/>
             <source src="{{videoInfo.video_src}}">
             <span class="logo">ccc</span>
           </video>
           <div class="informacion-video">
             <div class="detalles">
-          <strong class="vistas">6.789.418.552 views</strong>
+              <strong class="vistas">6.789.418.552 views</strong>
+                <div class="reaccion"> 
+                  <li class="fa fa-thumbs-o-down reaccion-negativa" (click)="reaccionVideo('no')" aria-hidden="true"> </li>
+                  <li type="button" class="fa fa-thumbs-o-up reaccion-positiva" (click)="reaccionVideo('si')" aria-hidden="true"></li>
+                  <span class="span caja"></span>
+                  <strong class="numeros-negativos">{{videoInfo.reaccionNegativa}}</strong>  <strong class="numeros-positivos">{{videoInfo.reaccionPositiva}}</strong>
+                </div>
               <h3 class="titulo">{{videoInfo.titulo}}</h3>
               <p class="descripcion">{{videoInfo.descripcion}}</p>
-            </div>
-            <div class="reaccion"> 
-              <li class="fa fa-thumbs-o-down fa-2x reaccion-negativa" (click)="reaccionVideo('no')" aria-hidden="true"> </li>
-              <li type="button" class="fa fa-thumbs-o-up fa-2x reaccion-positiva" (click)="reaccionVideo('si')" aria-hidden="true"></li>
-              <span class="span caja"></span>
-              <strong class="numeros-negativos">{{videoInfo.reaccionNegativa}}</strong>  <strong class="numeros-positivos">{{videoInfo.reaccionPositiva}}</strong>
             </div>
           </div>
         </div>
       </div>
+      <section class="comentarios">
+        <div *ngFor="let videoInfo of videoInfo">
+          <app-comentarios [idUnica]="videoInfo.uniqueID"></app-comentarios>
+          <app-contenido-derecho class="visible-xs visible-sm"></app-contenido-derecho>
+        </div>
+      </section>
     </section>
-    <div class="contenido-derecho">
-      <app-contenido-derecho class="hidden-xs hidden-sm"></app-contenido-derecho>
-    </div>
+      <app-contenido-derecho class="col-md-3 hidden-xs hidden-sm"></app-contenido-derecho>
   </div>
-  <section style="float:left">
-    <div *ngFor="let videoInfo of videoInfo">
-      <app-comentarios [idUnica]="videoInfo.uniqueID"></app-comentarios>
-      <app-contenido-derecho class="visible-xs visible-sm"></app-contenido-derecho>
-    </div>
-  </section>
 </div>

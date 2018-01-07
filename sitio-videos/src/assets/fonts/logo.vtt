@@ -1,0 +1,7 @@
+WEBVTT FILE
+
+STYLE
+::cue (strong){ color:red;}
+
+00:00:00.000 --> 03:00:15.500  vertical:rt line:-18 align:end
+<strong>THE</strong><b>Fight</b>

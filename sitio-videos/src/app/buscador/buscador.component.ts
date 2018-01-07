@@ -33,7 +33,7 @@ export class BuscadorComponent implements OnInit {
     }
     $('#imagenes').text('cargando...');
     $.getJSON ('http://api.flickr.com/services/feeds/photos_public.gne?tags=' +
-    this.tag + '&tagmode=any&format=json&jsoncallback=?', function(datos){
+    this.tag + '&tagmode=any&format=json&lang=es-us&jsoncallback=?', function(datos){
       $.each(datos.items, function(i, item){
         texto += '<div style=\'display:inline-block; width: 250px;\' >';
         texto += '<img src=\'' + item.media.m + '\'/>';

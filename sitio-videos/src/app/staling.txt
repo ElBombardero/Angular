@@ -1,0 +1,42 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { CoursesComponent } from './courses/courses.component';
+import { FooterComponent } from './footer/footer.component';
+import { LogInComponent } from './log-in/log-in.component';
+
+
+// Configurar rutas
+const rutasApp = [
+  { path: 'Login', component: LogInComponent},
+  { path: 'footer', component: FooterComponent},
+  { path: 'Course', component: CoursesComponent},
+  { path: 'Sidebar', component: SidebarComponent},
+  {path: '', redirectTo: 'Login', pathMatch: 'full'},
+  {path: '**', component: LogInComponent}
+];
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    CoursesComponent,
+    FooterComponent,
+    LogInComponent
+  ],
+  imports: [
+    BrowserModule,
+    // importar rutas
+    RouterModule.forRoot(rutasApp),
+	HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

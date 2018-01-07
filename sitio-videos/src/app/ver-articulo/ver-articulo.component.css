@@ -20,6 +20,17 @@
     background-position-y: 50%;
     background-repeat:no-repeat;
 }
+
+.reacciones {
+    border:3px;
+    width: 80%;
+    margin: auto;
+}
+
+.reaccion {
+    border-right: 1px;
+    border-right-style: solid;
+}
 .h4{
     text-align: center;
     margin: 13.3em 0 0.5em;

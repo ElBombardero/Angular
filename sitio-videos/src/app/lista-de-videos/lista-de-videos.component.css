@@ -1,5 +1,11 @@
-.videos-de-lista {
+.contenedor {
 	max-width: 87%;
+	margin:auto;
+}
+
+.section {
+	width: 75%;
+	float: left;
 	margin: auto;
 }
 
@@ -8,6 +14,7 @@
     border:1px;
     border-color: gray;
     border-style: solid;
+    max-width: 700px;
 }
 .agregarVideo {
 	font-weight: 700;
@@ -18,8 +25,15 @@
 	color:#14149B;
 }
 @media screen and (max-width:900px){
-	
-	.videos-de-lista {
+
+	.contenedor {
+		width:100%;
 		max-width: 100%;
+	}
+	.section {
+		width: 100%;
+	}
+	.videos {
+		width: 100%;
 	}
 }

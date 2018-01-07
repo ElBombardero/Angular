@@ -23,7 +23,6 @@ peticionExterna(): void {
   this.http.request('http://localhost/practicas/angularjs/api/lista-de-videos.php')
   .subscribe( (res: Response) => {
     this.videos = res.json();
-    console.log( res.json() );
   });
 }
 

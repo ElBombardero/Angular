@@ -58,4 +58,12 @@ export class VideoPlayerComponent implements OnInit {
         }
   }
 
+  reaccionIcon() {
+    const windowHeight = $(window).width();
+    const anchoPantalla = .9 * windowHeight;
+    if (windowHeight > 90 ) {
+      $('.reaccion-negativa').css('visibility', 'hidden');
+    }
+  }
+
 }

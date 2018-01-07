@@ -31,9 +31,11 @@ export class VerArticuloComponent implements OnInit {
       for (let i = 0; i < this.informacionArticulo.length; i++) {
         const obj = this.informacionArticulo[i];
         this.contenidoA = obj['contenidoArticulo'];
-        console.log(this.contenidoA);
       }
     });
+  }
+  ver() {
+    $('#contenedor').html(this.contenidoA);
   }
 
 }
